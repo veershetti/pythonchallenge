@@ -8,7 +8,7 @@ def home():
       
       user = request.form['username']
       password = request.form['password']
-      if user=='naveen' and password=='123':
+      if user=='vnkgkl@gmail.com' and password=='123':
             session['username']=request.form['username']
          # importing csv module
             return render_template('home.html',login=login)
