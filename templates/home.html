@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Table </title>			
+	</head>
+	<body>
+		<div align="center">
+			{% if login %}
+    You are logged in as <strong>{{ session['username'] }}</strong> <br />
+    <a href={{ url_for('logout') }}>logout</a>
+    {%else%}
+    Please login here {{ session['username'] }} <br />
+    <a href={{ url_for('login') }}>login</a>
+    {%endif %}
+	<form method="post" action="ho">
+		<div class="col-3"><p >Enter how many Values </p> </div><div class="col-9"><p>: <input 
+	   type="number"  name="num" 
+	   style="border-radius:5px;height:25px;color:#545454;font-size:13px;font-weight:bold;"></p></div>
+		
+		   <div class="col-12"> <p><input type="submit" value="Login" 
+	   style="height:35px;width:80px;float:right;margin-right:35px;background-color:rgba(0, 
+	   255, 31, 0.47);font-weight:bold;color:#fff"></p></div>
+		</form>
+		
+			<table>
+				<h1>
+				<!--Displaying the converted table-->
+					{% for table in tables %}
+					
+					<h2>{{titles[loop.index]}}</h2>							
+					{{ table|safe }}
+					
+					{% endfor %}	
+				</h1>
+			</table>
+		</div>
+	</body>
+</html>
